@@ -2,7 +2,7 @@
 Clock written in JS with Angular.
 
 ## Sample
-https://arturkonieczny.github.io/clock-angular/index.html
+https://arturkonieczny.github.io/clock-angular/
 
 ## Usage and Development
 Download this repository and
