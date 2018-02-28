@@ -1,0 +1,16 @@
+<div>
+  <select (change)="changeClockType($event)">
+    <option value="digital">
+      digital
+    </option>
+    <option value="analog">
+      analog
+    </option>
+  </select>
+</div>
+<div *ngIf="clockType === 'digital'">
+  <app-digital-clock></app-digital-clock>
+</div>
+<div *ngIf="clockType !== 'digital'">
+  <app-analog-clock></app-analog-clock>
+</div>

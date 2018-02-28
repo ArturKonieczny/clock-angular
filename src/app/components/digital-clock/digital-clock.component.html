@@ -1,0 +1,19 @@
+<div>
+  <span>{{hours}}</span>
+  <span>:</span>
+  <span>{{minutes}}</span>
+  <span> </span>
+  <span>{{seconds}}</span>
+  <span> </span>
+  <span *ngIf="timeFormat !== '24h'">{{ampm}}</span>
+</div>
+<div>
+  <select (change)="changeTimeFormat($event)">
+    <option value="24h">
+      24h
+    </option>
+    <option value="ampm">
+      AM/PM
+    </option>
+  </select>
+</div>
