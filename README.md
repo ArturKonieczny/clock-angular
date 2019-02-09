@@ -11,16 +11,22 @@ Download this repository and
 npm install
 ```
 
-For development purposes run:
+run
 
 ```bash
-npm run start
+ng serve
 ```
 
-Access test enviroment via localhost:4200
+to start testing enviroment.
 
-For production version run:
+Other scripts:
 
 ```bash
-npm run build
+ng build --prod
+ng test
+ng lint
+ng e2e
 ```
+
+## TODO
+Tests tests tests!

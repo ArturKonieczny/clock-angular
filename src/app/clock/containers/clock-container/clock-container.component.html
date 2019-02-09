@@ -1,0 +1,20 @@
+<app-date [date]="currentDate$ | async">
+</app-date>
+<div>
+  <select [formControl]="clockType">
+    <option value="digital">
+      Digital
+    </option>
+    <option value="analog">
+      Analog
+    </option>
+  </select>
+</div>
+<app-digital-clock
+  *ngIf="clockType.value === 'digital'"
+  [time]="currentTime$ | async">
+</app-digital-clock>
+<app-analog-clock
+  *ngIf="clockType.value === 'analog'"
+  [time]="currentTime$ | async">
+</app-analog-clock>

@@ -1,0 +1,19 @@
+<div *ngIf="time">
+  <span>
+    {{ time.hours | hoursTimeFormat:timeFormat.value | makeDigits }}:{{ time.minutes | makeDigits }}
+    {{ time.seconds | makeDigits }}
+  </span>
+  <span *ngIf="timeFormat.value !== '24h'">
+    {{ time.hours < hoursCount ? 'am' : 'pm' }}
+  </span>
+</div>
+<div>
+  <select [formControl]="timeFormat">
+    <option value="24h">
+      24h
+    </option>
+    <option value="ampm">
+      AM/PM
+    </option>
+  </select>
+</div>

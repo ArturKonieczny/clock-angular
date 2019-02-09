@@ -1,0 +1,14 @@
+<div *ngIf="time">
+  <div class="shield">
+    <img src="assets/shield.png" />
+  </div>
+  <div class="hours" [ngStyle]="analogTime.hours | analogAngle">
+    <img src="assets/hours.png" />
+  </div>
+  <div class="minutes" [ngStyle]="analogTime.minutes | analogAngle">
+    <img src="assets/minutes.png" />
+  </div>
+  <div class="seconds" [ngStyle]="analogTime.seconds | analogAngle">
+    <img src="assets/seconds.png" />
+  </div>
+</div>

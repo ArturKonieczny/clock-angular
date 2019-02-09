@@ -1,22 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
-import { ClockContainerComponent } from './components/clock-container/clock-container.component';
-import { DigitalClockComponent } from './components/digital-clock/digital-clock.component';
-import { AnalogClockComponent } from './components/analog-clock/analog-clock.component';
+import { ClockModule } from './clock/clock.module';
+import { ClockEffects } from './clock/effects/clock.effects';
+import { reducers } from './app.root.reducer';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ClockContainerComponent,
-    DigitalClockComponent,
-    AnalogClockComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ClockModule,
+    RouterModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([
+      ClockEffects,
+    ])
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [
+    AppComponent
+  ],
 })
 export class AppModule { }

@@ -1,0 +1,6 @@
+<div *ngIf="date">
+  <span>
+    {{ date.day | makeDigits }}.{{ date.month | makeDigits }}.{{ date.year | makeDigits:4 }}
+    {{ date.weekDay | weekdays }}
+  </span>
+</div>
