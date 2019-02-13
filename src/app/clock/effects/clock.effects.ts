@@ -12,17 +12,13 @@ export class ClockEffects {
   @Effect()
   updateTime$: Observable<clockActions.Actions> = this.actions$.pipe(
     ofType(clockActions.UPDATE_TIME),
-    map(() => {
-      return new clockActions.SetTimeAction(this.clockService.getTime());
-    }),
+    map(() => new clockActions.SetTimeAction(this.clockService.getTime())),
   );
 
   @Effect()
   updateDate$: Observable<clockActions.Actions> = this.actions$.pipe(
     ofType(clockActions.UPDATE_DATE),
-    map(() => {
-      return new clockActions.SetDateAction(this.clockService.getDate());
-    }),
+    map(() => new clockActions.SetDateAction(this.clockService.getDate())),
   );
 
   constructor(
