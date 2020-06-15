@@ -31,7 +31,15 @@ describe('ClockContainerComponent', () => {
       ],
       imports: [
         ReactiveFormsModule,
-        StoreModule.forRoot(reducers),
+        StoreModule.forRoot(
+          reducers,
+          {
+            runtimeChecks: {
+              strictStateImmutability: true,
+              strictActionImmutability: true
+            },
+          }
+        ),
       ],
       providers: [
         Store,
