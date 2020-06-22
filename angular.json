@@ -11,6 +11,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -27,6 +28,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -44,6 +51,12 @@
               ]
             },
             "protractor": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "sourceMap": true,
               "aot": true,
               "fileReplacements": [
@@ -142,22 +155,22 @@
     "@schematics/angular:component": {
       "inlineTemplate": false,
       "inlineStyle": false,
-      "spec": true,
+      "skipTests": false,
       "prefix": "app",
-      "styleext": "scss"
+      "style": "scss"
     },
     "@schematics/angular:directive": {
-      "spec": true,
+      "skipTests": false,
       "prefix": "app"
     },
     "@schematics/angular:module": {
-      "spec": true
+      "skipTests": false
     },
     "@schematics/angular:pipe": {
-      "spec": true
+      "skipTests": false
     },
     "@schematics/angular:service": {
-      "spec": true
+      "skipTests": false
     }
   }
 }
